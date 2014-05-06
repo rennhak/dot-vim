@@ -1,0 +1,91 @@
+" File: $HOME/.vim_public/02_colors
+"
+
+
+""""
+"
+" Before ColorScheme load
+"
+"""""""""
+
+" Reset color environment  {{{
+" highlight clear
+" if exists("syntax_on")
+"  syntax reset
+" endif
+
+" syntax enable
+" }}}
+
+" Defines highlighting colors for TODO TODO1 TODO2 TODO3 etc. {{{
+" Credit: http://dtuite.github.com/define-custom-vim-tags-and-labels.html
+"
+" Possible Colors
+"
+" Black
+" DarkBlue
+" DarkGreen
+" DarkCyan
+" DarkRed
+" DarkMagenta
+" Brown, DarkYellow
+" LightGray, LightGrey, Gray, Grey
+" DarkGray, DarkGrey
+" Blue, LightBlue
+" Green, LightGreen
+" Cyan, LightCyan
+" Red, LightRed
+" Magenta, LightMagenta
+" Yellow, LightYellow
+" White
+"
+"
+if !exists("autocmd_colorscheme_loaded")
+  let autocmd_colorscheme_loaded = 1
+
+  autocmd ColorScheme * highlight TodoRed    ctermbg=Red    guibg=#002b37 ctermfg=White guifg=#E01B1B
+  autocmd ColorScheme * highlight TodoOrange ctermbg=Yellow guibg=#002b37 ctermfg=Black guifg=#E0841B
+  autocmd ColorScheme * highlight TodoYellow ctermbg=Green  guibg=#002b37 ctermfg=Black guifg=#E0D91B
+endif
+
+if has("autocmd")
+	if v:version > 701
+  	autocmd Syntax * call matchadd('TodoRed',    '\W\zs\(TODO1\)')
+    autocmd Syntax * call matchadd('TodoOrange', '\W\zs\(TODO2\)')
+    autocmd Syntax * call matchadd('ToDoYellow', '\W\zs\(TODO3\)')
+	endif
+endif " }}}
+
+
+
+""""
+"
+" ColorScheme load
+"
+"""""""""
+
+" Load color scheme depending on environment {{{
+"if has("gui_running")
+"  colorscheme zenburn
+"else
+  set t_Co=256
+  set background=dark
+
+  " Credit: http://juan.boxfi.com/vim-color-schemes/#symfony
+  colorscheme symfony
+  set background=light
+"endif " }}}
+
+
+""""
+"
+" After ColorScheme load
+"
+"""""""""
+
+hi FoldColumn ctermbg=4
+hi Folded ctermbg=4
+
+
+
+" vim:ts=2:tw=100:wm=100:syntax=vim

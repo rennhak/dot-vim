@@ -1,0 +1,30 @@
+" File: .vim_public/07_key_bindings
+"
+
+" <Leader> key is the \ key on standard config
+" http://stackoverflow.com/questions/1764263/what-is-the-leader-in-a-vimrc-file
+
+" Turn on indent-guides ($HOME/.vim/bundle/vim_indent_guides
+" Keys: \ i g
+
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+
+nmap t= :Tabular /=<CR>
+nmap mst= :MSExecCmd Tabular /=<CR>
+
+" vim:ts=2:tw=100:wm=100:syntax=vim

@@ -1,0 +1,30 @@
+" File: $HOME/.vim_public/04_highlights
+"
+
+
+" hightlight trailing whitesspaces and tabs
+ set list listchars=trail:.
+ highlight SpecialKey ctermfg=DarkGrey
+
+" hightlights shortly the braces when you type them
+set showmatch
+
+" shows the hightlight for tenth of sec
+set mat=5
+
+" Vim Git Gutter
+highlight clear SignColumn
+hi SignColumn ctermbg=0
+
+" exe "hi! SignColumn"     .s:fmt_none   .s:fg_base0  .s:bg_base02
+
+
+
+" Highlight if we are slopping over the 80'th column
+" Credit: OSCON 2013: "More Instantly Better Vim" - Damian Conway
+highlight ColorColumn ctermbg=magenta
+call matchadd( 'ColorColumn', '\%81v', 100 )
+
+
+
+" vim:ts=2:tw=100:wm=100:syntax=vim

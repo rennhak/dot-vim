@@ -1,0 +1,15 @@
+" File: $HOME/.vim_public/05_functions
+"
+
+au BufRead,BufNewFile *.build set filetype=xml
+au BufRead,BufNewFile *.rb    set filetype=ruby
+
+
+" Syntactic
+let g:syntastic_cpp_check_header = 1
+
+let g:syntastic_cpp_include_dirs = [ 'includes', 'headers', 'include', 'src/include' ]
+
+
+
+" vim:ts=2:tw=100:wm=100:syntax=vim

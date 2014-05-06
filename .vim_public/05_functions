@@ -1,0 +1,59 @@
+" File: $HOME/.vim_public/05_functions
+"
+
+" Make sure that we have relative numbers when focused and absolute when not
+
+" This is insanely slow, why?
+
+"set relativenumber
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
+"au FocusLost * :set number
+"au FocusGained * :set relativenumber
+
+"autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
+
+
+
+" Highlight matches when jumping to next
+
+" This rewires n and N to do the highlighing...
+nnoremap <silent> n   n:call HLNext(0.4)<cr>
+nnoremap <silent> N   N:call HLNext(0.4)<cr>
+
+highlight WhiteOnRed ctermbg=red ctermfg=white
+
+" " just highlight the match in red...
+function! HLNext (blinktime)
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#'.@/
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
+ 
+" " blink the line containing the match...
+" function! HLNext (blinktime)
+"   set invcursorline
+"   redraw
+"   exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+"   set invcursorline
+"   redraw
+" endfunction
+
+
+
+
+" vim:ts=2:tw=100:wm=100:syntax=vim

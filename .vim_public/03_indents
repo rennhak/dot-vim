@@ -1,0 +1,40 @@
+" File: .vim_public/03_indents
+"
+
+
+" Visual Guide to Indentation Levels
+"
+" gVIM
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size  = 1
+
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=240
+
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red  ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=yellow  ctermbg=4
+
+" hi IndentGuidesEven guibg='red' guifg='blue' ctermbg='red' ctermfg='blue'
+" hi IndentGuidesOdd  guibg='white' guifg='blue' ctermbg='white' ctermfg='blue'
+
+
+" Terminal
+" hi IndentGuidesOdd  ctermbg=black
+" hi IndentGuidesEven ctermbg=darkgrey
+" hi IndentGuidesEven ctermbg=yellow
+" hi IndentGuidesOdd  ctermbg=red
+
+
+" sets cindent mode others are ai (autoindent), si (smart indent)
+set ai
+set si
+set cindent
+
+" use tab at beginning of the line spaces elsewhere
+" set smarttab
+
+
+
+
+" vim:ts=2:tw=100:wm=100:syntax=vim

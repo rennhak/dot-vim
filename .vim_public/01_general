@@ -1,0 +1,115 @@
+" File: .vim_public/01_general
+"
+
+
+" Handle Pathogen extension handler {{{
+" Extensions should be in .vim/bundle/
+" e.g. cd ~/.vim/bundle; git clone git://github.com/tpope/vim-sensible.git
+set nocompatible
+" silent! call pathogen#infect()
+call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+syntax on
+filetype plugin indent on
+" }}}
+
+
+set backupdir=~/.backup//
+set directory=~/.backup//
+
+set fenc=utf-8
+set vb t_vb=
+set ww=b,s,<,>,[,]
+set sel=exclusive
+set slm=mouse,key
+set km=startsel,stopsel
+set ul=1000
+set bs=indent,eol,start
+set ru
+syn on
+set ai ai
+set laststatus=2
+set ts=2
+set sw=2
+set sta sta
+set visualbell
+set foldcolumn=3
+set foldmethod=marker
+set tabstop=2
+set autoindent
+set nowrap
+set wrapmargin=100
+set textwidth=100
+set expandtab
+set shiftwidth=2
+"set list listchars=tab:»·,trail:· 
+set modeline
+
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+
+" Fold Column line
+set fdc=1
+
+
+" list tabs
+
+" set list listchars=tab:\|_,trail:.
+" 
+" ctrl + n  -> keyword completetion.
+" normal mode, K over a keyword goes to manpage..
+
+" no vi compat please
+set nocompatible
+
+" share clipboard with x
+set clipboard+=unnamed
+
+" load filetype plugins
+"set nocp
+"if version >= 600
+  "syntax on
+
+  " Reset needed for pathogen
+  "filetype off
+  "filetype on
+
+  "filetype plugin indent on
+  "filetype plugin on
+  "filetype indent on
+  " syntax on
+"endif
+
+
+" these are not word diveders so don't try to divide them
+set isk+=_,$,@,%,#,-
+
+" show line numbers
+set number
+
+" backspace works normal now
+set backspace=2
+
+" use mouse everywhere
+set mouse=a
+
+" keep ten lines top/bottom for scope
+set so=10
+
+
+" Tell vim to remember certain things when we exit
+" '10 : marks will be remembered for up to 10 previously edited files
+" "100 : will save up to 100 lines for each register
+" :20 : up to 20 lines of command-line history will be remembered
+" % : saves and restores the buffer list
+" n... : where to save the viminfo files
+" taken from: https://gist.github.com/955547 jreisig of js fame
+set viminfo='10,\"100,:20,%,n~/.viminfo
+set ruler
+
+
+" vim:ts=2:tw=100:wm=100:syntax=vim

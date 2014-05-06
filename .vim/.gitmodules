@@ -1,0 +1,33 @@
+[submodule "bundle/vim_indent_guides"]
+	path = bundle/vim_indent_guides
+	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "bundle/delimiter_mate"]
+	path = bundle/delimiter_mate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/vim_powerline"]
+	path = bundle/vim_powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim_css_color"]
+	path = bundle/vim_css_color
+	url = https://github.com/skammer/vim-css-color.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "bundle/vimprj"]
+	path = bundle/vimprj
+	url = https://github.com/vim-scripts/vimprj.git
+[submodule "bundle/indexer"]
+	path = bundle/indexer
+	url = https://github.com/vim-scripts/indexer.tar.gz.git
+[submodule "bundle/DfrankUtil"]
+	path = bundle/DfrankUtil
+	url = https://github.com/vim-scripts/DfrankUtil.git
+[submodule "bundle/vim_git_gutter"]
+	path = bundle/vim_git_gutter
+	url = https://github.com/airblade/vim-gitgutter.git
